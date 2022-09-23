@@ -17,10 +17,18 @@ To setup a Unix machine,
 
 - Sign in to the user's account.
 - Run the following command  
-    `wget -O - https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.sh | bash`
+
+    ```bash
+    wget -O - https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.sh | bash
+    ```
+
 - Configure RDP client to connect on the server/host `localhost:29356` along with user credentials.
 - For testing, you can run the following command before connecting to the RDP  
-    `bash ~/.config/start_iap_tunnel.sh visma-fin-app 29356`
+
+    ```bash
+    bash ~/.config/start_iap_tunnel.sh visma-fin-app 29356
+    ```
+
 - From subsequent restart, the tunnel should automatically starts during the machine startup.
 
 ## Windows
@@ -29,10 +37,18 @@ To setup a Windows machine,
 
 - Sign in to the user's account
 - Run the following command
-    `powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.bat"", ""$env:Temp\setup_iap_tunnel.bat"") & $env:Temp\setup_iap_tunnel.bat"`
+
+    ```bat
+    powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.bat"", ""$env:Temp\setup_iap_tunnel.bat"") & $env:Temp\setup_iap_tunnel.bat"
+    ```
+
 - Configure RDP client to connect on the server/host `localhost:29356` along with user credentials.
-- For testing, you can run the following command before connecting to the RDP
-    `$HOME\start_iap_tunnel.bat visma-fin-app 29356`
+- For testing, you can run the following command before connecting to the RDP  
+
+    ```bat
+    $HOME\start_iap_tunnel.bat visma-fin-app 29356
+    ```
+
 - Save the RDP connection as a file. This can be used to automate the whole process.
 - Create a Task in "Task Scheduler" with trigger as user logon and actions as
   - (1) Script execution (`$HOME\start_iap_tunnel.bat visma-fin-app 29356`)
