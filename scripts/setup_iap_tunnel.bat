@@ -4,7 +4,7 @@
 :: If it is not installed, install it.
 WHERE gcloud >nul 2>nul
 IF %ERRORLEVEL% EQU 0 ECHO gcloud already installed 
-IF %ERRORLEVEL% NEQ 0 powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe"", ""$env:Temp\GoogleCloudSDKInstaller.exe"") & $env:Temp\GoogleCloudSDKInstaller.exe"
+IF %ERRORLEVEL% NEQ 0 powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe"", ""$env:Temp\GoogleCloudSDKInstaller.exe""); .\$env:Temp\GoogleCloudSDKInstaller.exe"
 
 :: download the payload from github to home directory
 
