@@ -5,7 +5,7 @@ if (Get-Command gcloud -errorAction SilentlyContinue)
     write-host("gcloud exists. continuing...")
 } else {
     write-host("gcloud does not exit")
-    (New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe"); .\$env:Temp\GoogleCloudSDKInstaller.exe
+    (New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe"); Start-Process powershell $env:Temp\GoogleCloudSDKInstaller.exe
 }
 
 # download the payload from github to home directory

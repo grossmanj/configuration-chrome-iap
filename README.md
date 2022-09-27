@@ -39,11 +39,11 @@ To setup a Windows machine,
 - Run the following command
 
     ```bat
-    powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.ps1"", ""$env:Temp\setup_iap_tunnel.ps1""); .\$env:Temp\setup_iap_tunnel.ps1"
+    powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.ps1"", ""$env:Temp\setup_iap_tunnel.ps1""); Start-Process powershell $env:Temp\setup_iap_tunnel.ps1"
     ```
 
     ```ps1
-    (New-Object Net.WebClient).DownloadFile("https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.ps1", "$env:Temp\setup_iap_tunnel.ps1"); .\$env:Temp\setup_iap_tunnel.ps1
+    (New-Object Net.WebClient).DownloadFile("https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/scripts/setup_iap_tunnel.ps1", "$env:Temp\setup_iap_tunnel.ps1"); Start-Process powershell $env:Temp\setup_iap_tunnel.ps1
     ```
 
 - Configure RDP client to connect on the server/host `localhost:29356` along with user credentials.
