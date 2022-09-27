@@ -6,6 +6,6 @@ IF %ERRORLEVEL% EQU 0 ECHO gcloud already installed ELSE powershell -Command "(N
 
 :: download the payload from github to home directory
 
-powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/payloads/start_iap_tunnel.bat"", ""$HOME\start_iap_tunnel.bat visma-fin-app 29356"")"
+powershell -Command "(New-Object Net.WebClient).DownloadFile(""https://raw.githubusercontent.com/grossmanj/configuration-chrome-iap/main/payloads/start_iap_tunnel.bat"", ""$HOME\start_iap_tunnel.bat"")"
 
 :: TODO: check if it is possible to add task scheduler export in github and import it programatically.
